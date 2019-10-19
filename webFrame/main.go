@@ -1,15 +1,30 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
+	"io"
 	"net"
 )
 
-func recvFile(conn net.Conn) {
+func handler(conn net.Conn) {
 	fmt.Println("new connection: ", conn.RemoteAddr())
-	b := make([]byte)
-	conn.Read(b)
-	fmt.Println(string(b))
+	result := bytes.NewBuffer(nil)
+	for {
+		var buf [10]byte
+		n, err := conn.Read(buf[0:])
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			fmt.Println(err)
+			panic(err)
+		}
+		result.Write(buf[0:n])
+		fmt.Println(buf[0:n], n)
+	}
+
+	fmt.Println(string(result.Bytes()))
 	defer conn.Close()
 }
 
@@ -26,6 +41,6 @@ func main() {
 			// handle error
 			continue
 		}
-		go recvFile(conn)
+		go handler(conn)
 	}
 }
