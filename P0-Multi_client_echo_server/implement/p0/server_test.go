@@ -13,6 +13,7 @@ func TestNew(t *testing.T) {
 }
 
 func TestSlice(t *testing.T) {
-	a := ";" + strconv.FormatInt(1000, 10)
+	a := `:\n` + strconv.FormatInt(1000, 10)
+	fmt.Println(a)
 	fmt.Println(a)
 }
