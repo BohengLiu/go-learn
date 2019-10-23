@@ -53,7 +53,7 @@ func (s *multiEchoServer) handleRequest(conn net.Conn) {
 }
 
 func (s *multiEchoServer) addConnection(conn net.Conn) {
-	s.conns = append()
+	s.conns = append(s.conns,conn)
 }
 
 
