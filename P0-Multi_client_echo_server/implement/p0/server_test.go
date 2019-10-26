@@ -22,5 +22,5 @@ func TestSlice(t *testing.T) {
 func TestTime1(t *testing.T) {
 	a := time.Now().Unix()
 	b := time.Now().Unix()
-	fmt.Println(a,b)
+	fmt.Println(a, b)
 }
