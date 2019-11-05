@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/cmu440/bitcoin"
-	"github.com/cmu440/lsp"
+	"github.com/BohengLiu/go-learn/P1-Distributed_Bitcoin_Miner/src/github.com/cmu440/bitcoin"
+	"github.com/BohengLiu/go-learn/P1-Distributed_Bitcoin_Miner/src/github.com/cmu440/lsp"
 )
 
 func main() {
