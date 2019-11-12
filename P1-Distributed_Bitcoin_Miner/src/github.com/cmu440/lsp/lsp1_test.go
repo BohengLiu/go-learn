@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cmu440/lspnet"
+	"github.com/BohengLiu/go-learn/P1-Distributed_Bitcoin_Miner/src/github.com/cmu440/lspnet"
 )
 
 type testSystem struct {
